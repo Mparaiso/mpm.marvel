@@ -1,6 +1,6 @@
 {
   "name": "mpm.marvel",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "marvel api client framework",
   "main": "index.js",
   "scripts": {

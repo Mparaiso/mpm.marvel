@@ -1,6 +1,8 @@
 mpm.marvel
 ==========
 
+[![NPM](https://nodei.co/npm/mpm.marvel.png)](https://nodei.co/npm/mpm.marvel/)
+
 Marvel API client for NodeJS ! 
 
 more infos : http://developer.marvel.com/documentation/getting_started
