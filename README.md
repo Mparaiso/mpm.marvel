@@ -85,7 +85,9 @@ with npm :
 
 
 
+
 ##### COMICS
+
 
 **marvelClient.comics(callback)** :  Fetches lists of comics.
 
@@ -95,31 +97,28 @@ with npm :
 
 	marvelClient.comics({limit:5},function(error,result){});
 
-**marvelClient.comics(comicId)** : Fetches a single comic by id.
+**marvelClient.comics(comicId,callback)** : Fetches a single comic by id.
 
 	marvelClient.comics(comicId,function(error,result){});
 	marvelClient.comics({id:comicId},function(error,result){});
 
-```javascript
-	
 
-	// GET /v1/public/comics/{comicId}/characters Fetches lists of characters filtered by a comic id.
+**marvelClient.comics(comicId).characters(callback)** : Fetches lists of characters filtered by a comic id.
 
 	marvelClient.comics(comicId).characters(function(error,result){});
 
-	// GET /v1/public/comics/{comicId}/creators Fetches lists of creators filtered by a comic id.
+**marvelClient.comics(comicId).creators(callback)** :Fetches lists of creators filtered by a comic id.
 
 	marvelClient.comics(comicId).creators(function(error,result){});
 
-	// GET /v1/public/comics/{comicId}/events Fetches lists of events filtered by a comic id.
+**marvelClient.comics(comicId).events(callback)** : Fetches lists of events filtered by a comic id.
 
 	marvelClient.comics(comicId).events(function(error,result){});
 
-	// GET /v1/public/comics/{comicId}/stories Fetches lists of stories filtered by a comic id.
+**marvelClient.comics(comicId).stories(callback)** : Fetches lists of stories filtered by a comic id.
 	
 	marvelClient.comics({id:comicId,limit:5}).stories(function(error,result){});
 
-```
 
 ##### AND SO ON
 
@@ -150,3 +149,8 @@ with npm :
 	GET /v1/public/stories/{storyId}/comics Fetches lists of comics filtered by a story id.
 	GET /v1/public/stories/{storyId}/creators Fetches lists of creators filtered by a story id.
 	GET /v1/public/stories/{storyId}/events Fetches lists of events filtered by a story id.
+
+### TODO
+
+- [] complete documentation
+- [] move cache strategies into its own library

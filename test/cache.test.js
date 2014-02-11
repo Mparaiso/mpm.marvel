@@ -58,14 +58,12 @@ describe('cache', function() {
 				assert(res);
 				self.cache.Entry.find(function(err, res) {
 					assert.equal(res.length, 1);
-					// console.log(res);
 					done();
 				});
 			});
 		});
 		it('should get data from Mongoose cache instead of the mocked API', function(done) {
 			var entry, self;
-
 			entry = new this.cache.Entry();
 			self = this;
 			this.cache.request = sinon.spy(this, 'requestMock');
