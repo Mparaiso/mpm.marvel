@@ -5,9 +5,7 @@
  * @author mparaiso <mparaiso@online.fr>
  * @license LGPL
  */
-var crypto, events, http, marvel, request, underscore, url, util;
-
-underscore = require('underscore');
+var crypto, events, http, marvel, request, url, util;
 
 http = require('http');
 

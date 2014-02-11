@@ -3,7 +3,6 @@
 # @author mparaiso <mparaiso@online.fr>
 # @license LGPL
 ###
-underscore = require('underscore')
 http = require('http')
 util = require('util')
 events = require('events')
