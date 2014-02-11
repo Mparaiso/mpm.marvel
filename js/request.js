@@ -4,10 +4,15 @@ var request, _request;
 
 _request = require('request');
 
+
+/*
+ * @namespace
+ */
+
 request = exports;
 
 
-/**
+/*
  * http client API, can be mocked and cached
  * @type {function}
  */
@@ -18,7 +23,7 @@ request.Request = (function() {
   Request.prototype.request = _request;
 
   Request.prototype.execute = function(uri, callback) {
-    if (this.cache) {
+    if (this.cache && this.cache.execute instanceof Function) {
       return this.cache.execute(uri, callback);
     } else {
       return this.request(uri, function(err, res, body) {

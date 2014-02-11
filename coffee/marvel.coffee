@@ -69,9 +69,9 @@ class marvel.Marvel
      * [Marvel description]
      * @param {String} publicKey
      * @param {String} privateKey
-     * @param {request.Request} requestClass class used to make http requests
     ### 
-    constructor: (@publicKey, @privateKey,@requestClass=request.Request)->
+    constructor: (@publicKey, @privateKey,@_request)->
+        @_request ?= new request.Request()
         ### the api is created dynamically according to the entity array###
         marvel.entities.forEach (entity)=>
             options = {}
@@ -83,16 +83,15 @@ class marvel.Marvel
             ###
             F = (id, callback)=>
                 @timestamp = Date.now()
-                ### if argument 1 is a function,argument 1 is the callbacks ###
                 if id instanceof Function
+                    ### argument 1 is a function,argument 1 is the callbacks ###
                     callback = id
                     id = undefined
-                
                 else if typeof id == 'object'
                     ### id is a option hash ###
                     options = id
                     id = id.id
-                F.request = new @requestClass
+                F.request =  @_request 
                 F.publicKey = @publicKey
                 F.privateKey = @privateKey
                 F.urlOptions = { 
@@ -111,7 +110,8 @@ class marvel.Marvel
                 entity.links.forEach (link)=>
                     F[link] = @makeLink(F, link)
                 return F
-            ###end forEach###
+
+            ### end forEach ###
             this[entity.name] = F
 
 

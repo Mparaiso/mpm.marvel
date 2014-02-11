@@ -12,17 +12,18 @@ url = require('url')
 # @namespace 
 ###
 cache = exports
+### default duration is 3 days ###
 cache.defaultDuration = 1000 * 60 * 60 * 24 * 3
 
 class cache.Mongoose extends request.Request
 
     ###
-    # Mongoose based request cache.
-    # @param {Mongoose} mongoose a mongoose connection
+    # Mongoose request cache strategy
+    # @param {Mongoose} mongoose a mongoose instance
     # @param {String} collectionName name of the collection
     # @param {String} duration duration in ms,default is 3 days
     ###
-    constructor:(@mongoose,@collectionName="Entity",@duration=cache.defaultDuration)->
+    constructor:(@mongoose,@collectionName="Entry",@duration=cache.defaultDuration)->
         if not (this instanceof cache.Mongoose)
             return new cache.Mongoose(@mongoose,@collectionName,@duration)
         else
@@ -42,14 +43,20 @@ class cache.Mongoose extends request.Request
             else
                 @Entry = @mongoose.model(@collectionName)
 
+    ###
+    # execute cached request
+    # @param  {String} @uri   
+    # @param  {Function} @callback 
+    ###
     execute:(@uri,@callback)->
         @parsedUri = url.parse(@uri)
         delete @parsedUri.query.ts
         delete @parsedUri.query.hash
         delete @parsedUri.apikey
-        @Entry.findOne({uri:@parsedUri,expires_at:{"$gte":Date.now()}}, @onMongooseRequest.bind(this))
+        @Entry.findOne({uri:@parsedUri,expires_at:{"$gte":Date.now()}}, @onMongooseQuery.bind(this))
 
-    onMongooseRequest:(err, res)->
+    ### event listener for mongoose query ###
+    onMongooseQuery:(err, res)->
         if err
             @callback(err)
         else if !res
@@ -57,6 +64,7 @@ class cache.Mongoose extends request.Request
         else 
             @callback(undefined, res)
 
+    ### event listener for api query ###
     onApiRequest:(err, res, body)->
         if err
             @callback(err)
@@ -64,5 +72,6 @@ class cache.Mongoose extends request.Request
             entry = new @Entry({uri: @parsedUri,data: body})
             entry.save(@onEntrySave.bind(this))
 
+    ### event listener one mongoose save ###
     onEntrySave:(err, res)=>
-        @callback(err, res or undefined)
+        @callback(err, res.data or undefined)

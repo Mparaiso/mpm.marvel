@@ -23,6 +23,9 @@ url = require('url');
 
 cache = exports;
 
+
+/* default duration is 3 days */
+
 cache.defaultDuration = 1000 * 60 * 60 * 24 * 3;
 
 cache.Mongoose = (function(_super) {
@@ -30,15 +33,15 @@ cache.Mongoose = (function(_super) {
 
 
   /*
-   * Mongoose based request cache.
-   * @param {Mongoose} mongoose a mongoose connection
+   * Mongoose request cache strategy
+   * @param {Mongoose} mongoose a mongoose instance
    * @param {String} collectionName name of the collection
    * @param {String} duration duration in ms,default is 3 days
    */
 
   function Mongoose(mongoose, collectionName, duration) {
     this.mongoose = mongoose;
-    this.collectionName = collectionName != null ? collectionName : "Entity";
+    this.collectionName = collectionName != null ? collectionName : "Entry";
     this.duration = duration != null ? duration : cache.defaultDuration;
     this.onEntrySave = __bind(this.onEntrySave, this);
     if (!(this instanceof cache.Mongoose)) {
@@ -68,6 +71,13 @@ cache.Mongoose = (function(_super) {
     }
   }
 
+
+  /*
+   * execute cached request
+   * @param  {String} @uri   
+   * @param  {Function} @callback
+   */
+
   Mongoose.prototype.execute = function(uri, callback) {
     this.uri = uri;
     this.callback = callback;
@@ -80,10 +90,13 @@ cache.Mongoose = (function(_super) {
       expires_at: {
         "$gte": Date.now()
       }
-    }, this.onMongooseRequest.bind(this));
+    }, this.onMongooseQuery.bind(this));
   };
 
-  Mongoose.prototype.onMongooseRequest = function(err, res) {
+
+  /* event listener for mongoose query */
+
+  Mongoose.prototype.onMongooseQuery = function(err, res) {
     if (err) {
       return this.callback(err);
     } else if (!res) {
@@ -92,6 +105,9 @@ cache.Mongoose = (function(_super) {
       return this.callback(void 0, res);
     }
   };
+
+
+  /* event listener for api query */
 
   Mongoose.prototype.onApiRequest = function(err, res, body) {
     var entry;
@@ -106,8 +122,11 @@ cache.Mongoose = (function(_super) {
     }
   };
 
+
+  /* event listener one mongoose save */
+
   Mongoose.prototype.onEntrySave = function(err, res) {
-    return this.callback(err, res || void 0);
+    return this.callback(err, res.data || void 0);
   };
 
   return Mongoose;

@@ -7,4 +7,4 @@ commit: compile
 	@git commit -am"update $(message) `date`" | : 
 push: commit
 	@git push origin master
-.PHONY: test push
+.PHONY: test push compile

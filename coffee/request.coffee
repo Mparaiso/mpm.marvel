@@ -1,16 +1,19 @@
 "use strict"
 
 _request = require 'request'
+###
+# @namespace
+###
 request = exports
 
-###*
- * http client API, can be mocked and cached
- * @type {function}
+###
+# http client API, can be mocked and cached
+# @type {function}
 ###
 class request.Request
     request:_request
     execute:(uri,callback)->
-    	if @cache
+    	if @cache and @cache.execute instanceof Function
     		@cache.execute(uri,callback)
     	else
 	        @request uri,(err,res,body)->

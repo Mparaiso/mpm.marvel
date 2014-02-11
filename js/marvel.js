@@ -86,12 +86,14 @@ marvel.Marvel = (function() {
    * [Marvel description]
    * @param {String} publicKey
    * @param {String} privateKey
-   * @param {request.Request} requestClass class used to make http requests
    */
-  function Marvel(publicKey, privateKey, requestClass) {
+  function Marvel(publicKey, privateKey, _request) {
     this.publicKey = publicKey;
     this.privateKey = privateKey;
-    this.requestClass = requestClass != null ? requestClass : request.Request;
+    this._request = _request;
+    if (this._request == null) {
+      this._request = new request.Request();
+    }
 
     /* the api is created dynamically according to the entity array */
     marvel.entities.forEach((function(_this) {
@@ -107,9 +109,9 @@ marvel.Marvel = (function() {
          */
         F = function(id, callback) {
           _this.timestamp = Date.now();
-
-          /* if argument 1 is a function,argument 1 is the callbacks */
           if (id instanceof Function) {
+
+            /* argument 1 is a function,argument 1 is the callbacks */
             callback = id;
             id = void 0;
           } else if (typeof id === 'object') {
@@ -118,7 +120,7 @@ marvel.Marvel = (function() {
             options = id;
             id = id.id;
           }
-          F.request = new _this.requestClass;
+          F.request = _this._request;
           F.publicKey = _this.publicKey;
           F.privateKey = _this.privateKey;
           F.urlOptions = {
@@ -149,7 +151,7 @@ marvel.Marvel = (function() {
           return F;
         };
 
-        /*end forEach */
+        /* end forEach */
         return _this[entity.name] = F;
       };
     })(this));
