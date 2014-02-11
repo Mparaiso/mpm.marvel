@@ -19,6 +19,7 @@ describe('marvel', function() {
 	beforeEach(function() {
 		this.characterId = 1009521;
 		this.comicId = 41530;
+		this.creatorId = 6606;
 		this.publicKey = process.env.MARVEL_PUBLIC_KEY;
 		this.privateKey = process.env.MARVEL_PRIVATE_KEY;
 		this.marvel = marvel(this.publicKey, this.privateKey);
@@ -32,15 +33,15 @@ describe('marvel', function() {
 		});
 	});
 	describe('#characters', function() {
-		it('should be ok', function(done) {
+		it(RESPONSE_200, function(done) {
 			this.marvel.characters(cb(done));
 		});
-		it('response.code should be 200 with {limit:3}', function(done) {
+		it(RESPONSE_200.concat(' with {limit:3}'), function(done) {
 			this.marvel.characters({
 				limit: 3
 			}, cb(done));
 		});
-		it('should be ok', function(done) {
+		it(RESPONSE_200, function(done) {
 			this.marvel.characters(this.characterId, cb(done));
 		});
 		it('should find character with id', function(done) {
@@ -91,18 +92,37 @@ describe('marvel', function() {
 	});
 	describe('#comics#stories', function() {
 		it(RESPONSE_200, function(done) {
-			this.marvel.comics({id:this.comicId,limit:3}).stories(cb(done));
+			this.marvel.comics({
+				id: this.comicId,
+				limit: 3
+			}).stories(cb(done));
 		});
 	});
 	describe('#creators', function() {
-		it('response.code should be 200', function(done) {
+		it(RESPONSE_200, function(done) {
 			this.marvel.creators(cb(done));
 		});
 	});
-	describe('#creators#comics', noop);
-	describe('#creators#events', noop);
-	describe('#creators#series', noop);
-	describe('#creators#stories', noop);
+	describe('#creators#comics', function() {
+		it(RESPONSE_200, function(done) {
+			this.marvel.creators(this.creatorId).comics(cb(done));
+		});
+	});
+	describe('#creators#events', function() {
+		it(RESPONSE_200, function(done) {
+			this.marvel.creators(this.creatorId).events(cb(done));
+		});
+	});
+	describe('#creators#series', function() {
+		it(RESPONSE_200, function(done) {
+			this.marvel.creators(this.creatorId).series(cb(done));
+		});
+	});
+	describe('#creators#stories', function() {
+		it(RESPONSE_200, function(done) {
+			this.marvel.creators(this.creatorId).stories(cb(done));
+		});
+	});
 	describe('#events', function() {
 		it('response.code should be 200', function(done) {
 			this.marvel.events(cb(done));
