@@ -2,7 +2,7 @@
   "name": "mpm.marvel",
   "version": "0.0.0",
   "description": "marvel api client framework",
-  "main": "mpm.marvel.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha -R spec"
   },
@@ -25,7 +25,6 @@
   },
   "dependencies":{
     "underscore":"*",
-    "async":"*",
     "request":"*"
   },
   "devDependencies":{
