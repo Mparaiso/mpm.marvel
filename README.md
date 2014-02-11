@@ -5,6 +5,12 @@ mpm.marvel
 
 Marvel API client for NodeJS ! 
 
+mpm.marvel helps developpers request data from the Marvel API. 
+With mpm.marvel, developpers no longer need to make complicated raw http request calls to 
+query the Marvel API ! 
+
+mpm.marvel is written in coffee-script and compiled in readable Javascript.
+
 more infos : http://developer.marvel.com/documentation/getting_started
 
 author: mparaiso <mparaiso@online.fr>
