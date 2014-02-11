@@ -1,5 +1,8 @@
 "use strict"
-
+###
+# @author mparaiso <mparaiso@online.fr>
+# @license LGPL
+###
 _request = require 'request'
 ###
 # @namespace

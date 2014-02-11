@@ -3,7 +3,6 @@
 # @author mparaiso <mparaiso@online.fr>
 # @license LGPL
 ###
-
 request = require('./request')
 async = require('async')
 url = require('url')
