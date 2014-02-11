@@ -91,7 +91,7 @@ describe('marvel', function() {
 	});
 	describe('#comics#stories', function() {
 		it(RESPONSE_200, function(done) {
-			this.marvel.comics(this.comicId).stories(cb(done));
+			this.marvel.comics({id:this.comicId,limit:3}).stories(cb(done));
 		});
 	});
 	describe('#creators', function() {
