@@ -10,7 +10,7 @@ noop = function() {
 /* callback used in tests */
 cb = function(cb) {
 	return function(err, body) {
-		assert.equal(body.code,200);
+		assert.equal(body.code, 200);
 		cb(err);
 	};
 };
@@ -40,6 +40,11 @@ describe('marvel', function() {
 		});
 		it('should be ok', function(done) {
 			this.marvel.characters(this.characterId, cb(done));
+		});
+		it('should find character with id', function(done) {
+			this.marvel.characters({
+				id: this.characterId
+			}, cb(done));
 		});
 	});
 	describe('#characters#comics', function() {

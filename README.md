@@ -23,6 +23,12 @@ with npm :
 
 	var marvelClient = marvel(yourPublicKey,yourPrivateKey);
 
+	/**
+	 * CHARACTERS
+	 *
+	 * marvelClient.characters(characterId:Number|options:Object,[callback:Function])
+	 */
+
 	// GET /v1/public/characters Fetches lists of characters.
 
 	marvelClient.characters(function(err,result){
@@ -52,17 +58,43 @@ with npm :
 	
 	marvelClient.characters(someCharacterId).stories(function(err,res){});
 	events
+
+	/**
+	 * COMICS
+	 * marvelClient.comics(comicId|options,[callback])
+	 */
 	
+	// GET /v1/public/comics Fetches lists of comics.
+
+	marvelClient.comics(function(error,result){});
+	marvelClient.comics({limit:5},function(error,result){});
+
+	// GET /v1/public/comics/{comicId} Fetches a single comic by id.
+
+	marvelClient.comics(comicId,function(error,result){});
+	marvelClient.comics({id:comicId},function(error,result){});
+
+	// GET /v1/public/comics/{comicId}/characters Fetches lists of characters filtered by a comic id.
+
+	marvelClient.comics(comicId).characters(function(error,result){});
+
+	// GET /v1/public/comics/{comicId}/creators Fetches lists of creators filtered by a comic id.
+
+	marvelClient.comics(comicId).creators(function(error,result){});
+
+	// GET /v1/public/comics/{comicId}/events Fetches lists of events filtered by a comic id.
+
+	marvelClient.comics(comicId).events(function(error,result){});
+
+	// GET /v1/public/comics/{comicId}/stories Fetches lists of stories filtered by a comic id.
+	
+	marvelClient.comics(comicId).stories(function(error,result){});
+
 	/** and so on ...
 
 		Here is the API : 
 
-		GET /v1/public/comics Fetches lists of comics.
-		GET /v1/public/comics/{comicId} Fetches a single comic by id.
-		GET /v1/public/comics/{comicId}/characters Fetches lists of characters filtered by a comic id.
-		GET /v1/public/comics/{comicId}/creators Fetches lists of creators filtered by a comic id.
-		GET /v1/public/comics/{comicId}/events Fetches lists of events filtered by a comic id.
-		GET /v1/public/comics/{comicId}/stories Fetches lists of stories filtered by a comic id.
+
 		GET /v1/public/creators Fetches lists of creators.
 		GET /v1/public/creators/{creatorId} Fetches a single creator by id.
 		GET /v1/public/creators/{creatorId}/comics Fetches lists of comics filtered by a creator id.
