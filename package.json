@@ -1,0 +1,37 @@
+{
+  "name": "mpm.marvel",
+  "version": "0.0.0",
+  "description": "marvel api client framework",
+  "main": "mpm.marvel.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mparaiso/mpm.marvel"
+  },
+  "keywords": [
+    "marvel",
+    "rest",
+    "api",
+    "client",
+    "super",
+    "heroes"
+  ],
+  "author": "mparaiso",
+  "license": "LGPL",
+  "bugs": {
+    "url": "https://github.com/Mparaiso/mpm.marvel/issues"
+  },
+  "dependencies":{
+    "underscore":"*",
+    "async":"*",
+    "request":"*"
+  },
+  "devDependencies":{
+    "mocha":"*",
+    "sinon":"*",
+    "chai":"*",
+    "mongoose":"*"
+  }
+}
