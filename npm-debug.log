@@ -1,0 +1,190 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.21
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . C:\Users\mark prades\AppData\Roaming\npm-cache\3a52ce78-.lock
+11 verbose tar pack [ 'c:\\tmp\\npm-4356-eQrdfMqJ\\1392130949641-0.2603239589370787\\tmp.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz
+13 verbose folder .
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. C:\Users\mark prades\AppData\Roaming\npm-cache\1f1177db-tar.lock
+16 silly lockFile 91e35e7c-49641-0-2603239589370787-tmp-tgz tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz
+17 verbose lock tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz C:\Users\mark prades\AppData\Roaming\npm-cache\91e35e7c-49641-0-2603239589370787-tmp-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 91e35e7c-49641-0-2603239589370787-tmp-tgz tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz
+21 silly lockFile 91e35e7c-49641-0-2603239589370787-tmp-tgz tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz
+22 verbose tar unpack c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz
+23 silly lockFile 48380f3e-49641-0-2603239589370787-package tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package
+24 verbose lock tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package C:\Users\mark prades\AppData\Roaming\npm-cache\48380f3e-49641-0-2603239589370787-package.lock
+25 silly lockFile 91e35e7c-49641-0-2603239589370787-tmp-tgz tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz
+26 verbose lock tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz C:\Users\mark prades\AppData\Roaming\npm-cache\91e35e7c-49641-0-2603239589370787-tmp-tgz.lock
+27 silly gunzTarPerm modes [ '755', '644' ]
+28 silly gunzTarPerm extractEntry package.json
+29 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+30 silly gunzTarPerm extractEntry .npmignore
+31 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+32 silly gunzTarPerm extractEntry README.md
+33 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+34 silly gunzTarPerm extractEntry index.js
+35 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+36 silly gunzTarPerm extractEntry .travis.yml
+37 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+38 silly gunzTarPerm extractEntry coffee/cache.coffee
+39 silly gunzTarPerm modified mode [ 'coffee/cache.coffee', 438, 420 ]
+40 silly gunzTarPerm extractEntry coffee/marvel.coffee
+41 silly gunzTarPerm modified mode [ 'coffee/marvel.coffee', 438, 420 ]
+42 silly gunzTarPerm extractEntry coffee/request.coffee
+43 silly gunzTarPerm modified mode [ 'coffee/request.coffee', 438, 420 ]
+44 silly gunzTarPerm extractEntry js/cache.js
+45 silly gunzTarPerm modified mode [ 'js/cache.js', 438, 420 ]
+46 silly gunzTarPerm extractEntry js/marvel.js
+47 silly gunzTarPerm modified mode [ 'js/marvel.js', 438, 420 ]
+48 silly gunzTarPerm extractEntry js/request.js
+49 silly gunzTarPerm modified mode [ 'js/request.js', 438, 420 ]
+50 silly gunzTarPerm extractEntry js/cache.map
+51 silly gunzTarPerm modified mode [ 'js/cache.map', 438, 420 ]
+52 silly gunzTarPerm extractEntry js/marvel.map
+53 silly gunzTarPerm modified mode [ 'js/marvel.map', 438, 420 ]
+54 silly gunzTarPerm extractEntry js/request.map
+55 silly gunzTarPerm modified mode [ 'js/request.map', 438, 420 ]
+56 silly gunzTarPerm extractEntry makefile
+57 silly gunzTarPerm modified mode [ 'makefile', 438, 420 ]
+58 silly gunzTarPerm extractEntry test/cache.test.js
+59 silly gunzTarPerm modified mode [ 'test/cache.test.js', 438, 420 ]
+60 silly gunzTarPerm extractEntry test/marvel.test.js
+61 silly gunzTarPerm modified mode [ 'test/marvel.test.js', 438, 420 ]
+62 silly lockFile 48380f3e-49641-0-2603239589370787-package tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package
+63 silly lockFile 48380f3e-49641-0-2603239589370787-package tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package
+64 silly lockFile 91e35e7c-49641-0-2603239589370787-tmp-tgz tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz
+65 silly lockFile 91e35e7c-49641-0-2603239589370787-tmp-tgz tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\tmp.tgz
+66 verbose tar pack [ 'C:\\Users\\mark prades\\AppData\\Roaming\\npm-cache\\mpm.marvel\\0.0.0\\package.tgz',
+66 verbose tar pack   'c:\\tmp\\npm-4356-eQrdfMqJ\\1392130949641-0.2603239589370787\\package' ]
+67 verbose tarball C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+68 verbose folder c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package
+69 silly lockFile 48380f3e-49641-0-2603239589370787-package tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package
+70 verbose lock tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package C:\Users\mark prades\AppData\Roaming\npm-cache\48380f3e-49641-0-2603239589370787-package.lock
+71 silly lockFile 52b39cc0-che-mpm-marvel-0-0-0-package-tgz tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+72 verbose lock tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz C:\Users\mark prades\AppData\Roaming\npm-cache\52b39cc0-che-mpm-marvel-0-0-0-package-tgz.lock
+73 silly lockFile 48380f3e-49641-0-2603239589370787-package tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package
+74 silly lockFile 48380f3e-49641-0-2603239589370787-package tar://c:\tmp\npm-4356-eQrdfMqJ\1392130949641-0.2603239589370787\package
+75 silly lockFile 52b39cc0-che-mpm-marvel-0-0-0-package-tgz tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+76 silly lockFile 52b39cc0-che-mpm-marvel-0-0-0-package-tgz tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+77 silly lockFile 4cf9d78e-m-cache-mpm-marvel-0-0-0-package C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package
+78 verbose lock C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package C:\Users\mark prades\AppData\Roaming\npm-cache\4cf9d78e-m-cache-mpm-marvel-0-0-0-package.lock
+79 silly lockFile 4cf9d78e-m-cache-mpm-marvel-0-0-0-package C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package
+80 silly lockFile 4cf9d78e-m-cache-mpm-marvel-0-0-0-package C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package
+81 verbose tar unpack C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+82 silly lockFile e60b9e5b-m-cache-mpm-marvel-0-0-0-package tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package
+83 verbose lock tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package C:\Users\mark prades\AppData\Roaming\npm-cache\e60b9e5b-m-cache-mpm-marvel-0-0-0-package.lock
+84 silly lockFile 52b39cc0-che-mpm-marvel-0-0-0-package-tgz tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+85 verbose lock tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz C:\Users\mark prades\AppData\Roaming\npm-cache\52b39cc0-che-mpm-marvel-0-0-0-package-tgz.lock
+86 silly gunzTarPerm modes [ '755', '644' ]
+87 silly gunzTarPerm extractEntry package.json
+88 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+89 silly gunzTarPerm extractEntry .npmignore
+90 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+91 silly gunzTarPerm extractEntry README.md
+92 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+93 silly gunzTarPerm extractEntry index.js
+94 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+95 silly gunzTarPerm extractEntry .travis.yml
+96 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+97 silly gunzTarPerm extractEntry coffee/cache.coffee
+98 silly gunzTarPerm modified mode [ 'coffee/cache.coffee', 438, 420 ]
+99 silly gunzTarPerm extractEntry coffee/marvel.coffee
+100 silly gunzTarPerm modified mode [ 'coffee/marvel.coffee', 438, 420 ]
+101 silly gunzTarPerm extractEntry coffee/request.coffee
+102 silly gunzTarPerm modified mode [ 'coffee/request.coffee', 438, 420 ]
+103 silly gunzTarPerm extractEntry js/cache.js
+104 silly gunzTarPerm modified mode [ 'js/cache.js', 438, 420 ]
+105 silly gunzTarPerm extractEntry js/marvel.js
+106 silly gunzTarPerm modified mode [ 'js/marvel.js', 438, 420 ]
+107 silly gunzTarPerm extractEntry js/request.js
+108 silly gunzTarPerm modified mode [ 'js/request.js', 438, 420 ]
+109 silly gunzTarPerm extractEntry js/cache.map
+110 silly gunzTarPerm modified mode [ 'js/cache.map', 438, 420 ]
+111 silly gunzTarPerm extractEntry js/marvel.map
+112 silly gunzTarPerm modified mode [ 'js/marvel.map', 438, 420 ]
+113 silly gunzTarPerm extractEntry js/request.map
+114 silly gunzTarPerm modified mode [ 'js/request.map', 438, 420 ]
+115 silly gunzTarPerm extractEntry makefile
+116 silly gunzTarPerm modified mode [ 'makefile', 438, 420 ]
+117 silly gunzTarPerm extractEntry test/cache.test.js
+118 silly gunzTarPerm modified mode [ 'test/cache.test.js', 438, 420 ]
+119 silly gunzTarPerm extractEntry test/marvel.test.js
+120 silly gunzTarPerm modified mode [ 'test/marvel.test.js', 438, 420 ]
+121 silly lockFile e60b9e5b-m-cache-mpm-marvel-0-0-0-package tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package
+122 silly lockFile e60b9e5b-m-cache-mpm-marvel-0-0-0-package tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package
+123 silly lockFile 52b39cc0-che-mpm-marvel-0-0-0-package-tgz tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+124 silly lockFile 52b39cc0-che-mpm-marvel-0-0-0-package-tgz tar://C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+125 verbose chmod C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz 644
+126 silly chown skipping for windows C:\Users\mark prades\AppData\Roaming\npm-cache\mpm.marvel\0.0.0\package.tgz
+127 silly lockFile 3a52ce78- .
+128 silly lockFile 3a52ce78- .
+129 silly publish { name: 'mpm.marvel',
+129 silly publish   version: '0.0.0',
+129 silly publish   description: 'marvel api client framework',
+129 silly publish   main: 'index.js',
+129 silly publish   scripts: { test: 'mocha -R spec' },
+129 silly publish   repository: { type: 'git', url: 'https://github.com/Mparaiso/mpm.marvel' },
+129 silly publish   keywords: [ 'marvel', 'rest', 'api', 'client', 'super', 'heroes' ],
+129 silly publish   author: { name: 'mparaiso' },
+129 silly publish   license: 'LGPL',
+129 silly publish   bugs: { url: 'https://github.com/Mparaiso/mpm.marvel/issues' },
+129 silly publish   dependencies: { underscore: '*', request: '*' },
+129 silly publish   devDependencies:
+129 silly publish    { mocha: '*',
+129 silly publish      sinon: '*',
+129 silly publish      chai: '*',
+129 silly publish      mongoose: '*',
+129 silly publish      'source-map-support': '*' },
+129 silly publish   readme: 'mpm.marvel\r\n==========\r\n\r\nMarvel API client for NodeJS ! \r\n\r\nmore infos : http://developer.marvel.com/documentation/getting_started\r\n\r\nauthor: mparaiso <mparaiso@online.fr>\r\n\r\nversion: 0.0.1\r\n\r\n### INSTALLATION\r\n\r\nwith npm :\r\n\t\r\n\tnpm install mpm.marvel\r\n\r\n### USAGE\r\n\r\n\r\n```javascript\r\n\r\n\tvar assert = require(\'assert\');\r\n\tvar marvel = require(\'mpm.marvel\');\r\n\r\n\tvar marvelClient = marvel(yourPublicKey,yourPrivateKey);\r\n\r\n\t// get characters\r\n\tmarvelClient.characters(function(err,result){\r\n\t\tassert.equal(result.code,200);\r\n\t});\r\n```\r\n\r\n#### API\r\n\r\n##### CHARACTERS\r\n\r\n**marvelClient.characters(callback)** : Fetches lists of characters.\r\n\r\n\tmarvelClient.characters(function(err,result){\r\n\t\t\tassert.equal(result.code,200);\r\n\t\t});\r\n\r\n**marvelClient.characters(optionHash,callback)**\r\n\r\n\tmarvelClient.characters({limit:3},function(err,result){});\r\n\r\n**marvelClient.characters(characterId,callback)** : Fetches a single character by id.\r\n\r\n\tmarvelClient.characters(someCharacterId,function(err,res){});\r\n\tmarvelClient.characters({id:someCharacterId},function(err,res){});\r\n\r\n\r\n**marvelClient.characters(characterId).comics(callback)** : Fetches lists of comics filtered by a character id.\r\n\r\n\tmarvelClient.characters(someCharacterId).comics(function(err,res){});\r\n\r\n**marvelClient.characters(characterId).comics(optonHash,callback)**\r\n\r\n**marvelClient.characters(characterId).stories(callback)** : Fetches lists of stories filtered by a character id.\r\n\r\n\tmarvelClient.characters(someCharacterId).stories(function(err,res){});\r\n\r\n**marvelClient.characters(characterId).stories(optonHash,callback)**\r\n\r\n**marvelClient.characters(characterId).series(callback)** : Fetches lists of series filtered by a character id.\r\n\r\n\tmarvelClient.characters(someCharacterId).series(function(err,res){});\r\n\r\n**marvelClient.characters(characterId).series(optonHash,callback)**\r\n\r\n**marvelClient.characters(characterId).events(callback)** : Fetches lists of events filtered by a character id.\r\n\r\n\tmarvelClient.characters(someCharacterId).events(function(err,res){});\r\n\r\n**marvelClient.characters(characterId).events(optonHash,callback)**\r\n\r\n\r\n\r\n##### COMICS\r\n\r\n**marvelClient.comics(callback)** :  Fetches lists of comics.\r\n\r\n\tmarvelClient.comics(function(error,result){});\r\n\r\n**marvelClient.comics(options,callback)**\r\n\r\n\tmarvelClient.comics({limit:5},function(error,result){});\r\n\r\n**marvelClient.comics(comicId)** : Fetches a single comic by id.\r\n\r\n\tmarvelClient.comics(comicId,function(error,result){});\r\n\tmarvelClient.comics({id:comicId},function(error,result){});\r\n\r\n```javascript\r\n\t\r\n\r\n\t// GET /v1/public/comics/{comicId}/characters Fetches lists of characters filtered by a comic id.\r\n\r\n\tmarvelClient.comics(comicId).characters(function(error,result){});\r\n\r\n\t// GET /v1/public/comics/{comicId}/creators Fetches lists of creators filtered by a comic id.\r\n\r\n\tmarvelClient.comics(comicId).creators(function(error,result){});\r\n\r\n\t// GET /v1/public/comics/{comicId}/events Fetches lists of events filtered by a comic id.\r\n\r\n\tmarvelClient.comics(comicId).events(function(error,result){});\r\n\r\n\t// GET /v1/public/comics/{comicId}/stories Fetches lists of stories filtered by a comic id.\r\n\t\r\n\tmarvelClient.comics({id:comicId,limit:5}).stories(function(error,result){});\r\n\r\n```\r\n\r\n##### AND SO ON\r\n\r\n\r\n\tGET /v1/public/creators Fetches lists of creators.\r\n\tGET /v1/public/creators/{creatorId} Fetches a single creator by id.\r\n\tGET /v1/public/creators/{creatorId}/comics Fetches lists of comics filtered by a creator id.\r\n\tGET /v1/public/creators/{creatorId}/events Fetches lists of events filtered by a creator id.\r\n\tGET /v1/public/creators/{creatorId}/series Fetches lists of series filtered by a creator id.\r\n\tGET /v1/public/creators/{creatorId}/stories Fetches lists of stories filtered by a creator id.\r\n\tGET /v1/public/events Fetches lists of events.\r\n\tGET /v1/public/events/{eventId} Fetches a single event by id.\r\n\tGET /v1/public/events/{eventId}/characters Fetches lists of characters filtered by an event id.\r\n\tGET /v1/public/events/{eventId}/comics Fetches lists of comics filtered by an event id.\r\n\tGET /v1/public/events/{eventId}/creators Fetches lists of creators filtered by an event id.\r\n\tGET /v1/public/events/{eventId}/series Fetches lists of series filtered by an event id.\r\n\tGET /v1/public/events/{eventId}/stories Fetches lists of stories filtered by an event id.\r\n\tGET /v1/public/series Fetches lists of series.\r\n\tGET /v1/public/series/{seriesId} Fetches a single comic series by id.\r\n\tGET /v1/public/series/{seriesId}/characters Fetches lists of characters filtered by a series id.\r\n\tGET /v1/public/series/{seriesId}/comics Fetches lists of comics filtered by a series id.\r\n\tGET /v1/public/series/{seriesId}/creators Fetches lists of creators filtered by a series id.\r\n\tGET /v1/public/series/{seriesId}/events Fetches lists of events filtered by a series id.\r\n\tGET /v1/public/series/{seriesId}/stories Fetches lists of stories filtered by a series id.\r\n\tGET /v1/public/stories Fetches lists of stories.\r\n\tGET /v1/public/stories/{storyId} Fetches a single comic story by id.\r\n\tGET /v1/public/stories/{storyId}/characters Fetches lists of characters filtered by a story id.\r\n\tGET /v1/public/stories/{storyId}/comics Fetches lists of comics filtered by a story id.\r\n\tGET /v1/public/stories/{storyId}/creators Fetches lists of creators filtered by a story id.\r\n\tGET /v1/public/stories/{storyId}/events Fetches lists of events filtered by a story id.\r\n',
+129 silly publish   readmeFilename: 'README.md',
+129 silly publish   _id: 'mpm.marvel@0.0.0',
+129 silly publish   dist: { shasum: '69cdbbe48d2598bad68e662af4ea27b1b4b1db09' },
+129 silly publish   _from: '.' }
+130 verbose url raw mpm.marvel
+131 verbose url resolving [ 'https://registry.npmjs.org/', './mpm.marvel' ]
+132 verbose url resolved https://registry.npmjs.org/mpm.marvel
+133 info trying registry request attempt 1 at 16:02:31
+134 http PUT https://registry.npmjs.org/mpm.marvel
+135 http 201 https://registry.npmjs.org/mpm.marvel
+136 verbose url raw mpm.marvel
+137 verbose url resolving [ 'https://registry.npmjs.org/', './mpm.marvel' ]
+138 verbose url resolved https://registry.npmjs.org/mpm.marvel
+139 info trying registry request attempt 1 at 16:02:32
+140 http GET https://registry.npmjs.org/mpm.marvel
+141 http 404 https://registry.npmjs.org/mpm.marvel
+142 error 404 'mpm.marvel' is not in the npm registry.
+142 error 404 You should bug the author to publish it
+142 error 404
+142 error 404 Note that you can also install from a
+142 error 404 tarball, folder, or http url, or git url.
+143 error System Windows_NT 6.1.7601
+144 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+145 error cwd c:\development\categories\node\mpm.marvel
+146 error node -v v0.10.21
+147 error npm -v 1.3.11
+148 error code E404
+149 verbose exit [ 1, true ]

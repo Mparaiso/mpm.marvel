@@ -55,25 +55,25 @@ with npm :
 
 	marvelClient.characters(someCharacterId).comics(function(err,res){});
 
-**marvelClient.characters(characterId).comics(optonHash,callback)**
+**marvelClient.characters(characterId).comics(optionsHash,callback)**
 
 **marvelClient.characters(characterId).stories(callback)** : Fetches lists of stories filtered by a character id.
 
 	marvelClient.characters(someCharacterId).stories(function(err,res){});
 
-**marvelClient.characters(characterId).stories(optonHash,callback)**
+**marvelClient.characters(characterId).stories(optionsHash,callback)**
 
 **marvelClient.characters(characterId).series(callback)** : Fetches lists of series filtered by a character id.
 
 	marvelClient.characters(someCharacterId).series(function(err,res){});
 
-**marvelClient.characters(characterId).series(optonHash,callback)**
+**marvelClient.characters(characterId).series(optionsHash,callback)**
 
 **marvelClient.characters(characterId).events(callback)** : Fetches lists of events filtered by a character id.
 
 	marvelClient.characters(someCharacterId).events(function(err,res){});
 
-**marvelClient.characters(characterId).events(optonHash,callback)**
+**marvelClient.characters(characterId).events(optionsHash,callback)**
 
 
 
