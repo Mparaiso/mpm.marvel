@@ -8,7 +8,7 @@ request = exports;
 
 
 /**
- * http client API, can be mocked
+ * http client API, can be mocked and cached
  * @type {function}
  */
 
@@ -18,15 +18,21 @@ request.Request = (function() {
   Request.prototype.request = _request;
 
   Request.prototype.execute = function(uri, callback) {
-    return this.request(uri, function(err, res, body) {
-      if (err) {
-        return callback(err);
-      } else {
-        return callback(void 0, JSON.parse(body));
-      }
-    });
+    if (this.cache) {
+      return this.cache.execute(uri, callback);
+    } else {
+      return this.request(uri, function(err, res, body) {
+        if (err) {
+          return callback(err);
+        } else {
+          return callback(void 0, JSON.parse(body));
+        }
+      });
+    }
   };
 
   return Request;
 
 })();
+
+//# sourceMappingURL=request.map

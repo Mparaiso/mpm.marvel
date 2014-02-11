@@ -31,6 +31,7 @@
     "mocha":"*",
     "sinon":"*",
     "chai":"*",
-    "mongoose":"*"
+    "mongoose":"*",
+    "source-map-support":"*"
   }
 }

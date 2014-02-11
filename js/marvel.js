@@ -204,3 +204,5 @@ marvel.Marvel = (function() {
 })();
 
 module.exports = marvel;
+
+//# sourceMappingURL=marvel.map

@@ -2,6 +2,8 @@
 "use strict";
 var mongoose, cache, assert, url;
 
+require('source-map-support').install();
+
 mongoose = require('mongoose');
 cache = require('../index').cache;
 assert = require('assert');
