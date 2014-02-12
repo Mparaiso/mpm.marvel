@@ -2,8 +2,8 @@
 "use strict";
 
 /*
- * @author mparaiso <mparaiso@online.fr>
- * @license LGPL
+@author mparaiso <mparaiso@online.fr>
+@license LGPL
  */
 var request, _request;
 
@@ -18,14 +18,20 @@ request = exports;
 
 
 /*
- * http client API, can be mocked and cached
- * @type {function}
+http client, can be mocked and cached
  */
 
 request.Request = (function() {
   function Request() {}
 
   Request.prototype.request = _request;
+
+
+  /*
+  execute a request
+  @param  {String}   uri    
+  @param  {Function} callback
+   */
 
   Request.prototype.execute = function(uri, callback) {
     if (this.cache && this.cache.execute instanceof Function) {

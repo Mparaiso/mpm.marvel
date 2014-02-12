@@ -21,11 +21,11 @@ crypto = require('crypto');
 
 
 /**
- * marvel api
- * @namespace
- * @param  {String} publicKey
- * @param  {String} privateKey
- * @return {marvel.Marvel}
+marvel api
+@namespace
+@param  {String} publicKey
+@param  {String} privateKey
+@return {marvel.Marvel}
  */
 
 marvel = function(publicKey, privateKey) {
@@ -34,9 +34,9 @@ marvel = function(publicKey, privateKey) {
 
 
 /**
- * hash a string
- * @param  {String} string the string to hash
- * @return {String}
+hash a string
+@param  {String} string the string to hash
+@return {String}
  */
 
 marvel.md5 = function(string) {
@@ -51,8 +51,8 @@ marvel.rootPath = 'v1/public';
 
 
 /*
- * A hash of entities
- * @type {Array}
+A hash of entities
+@type {Array}
  */
 
 marvel.entities = [
@@ -86,9 +86,9 @@ marvel.entities = [
 marvel.Marvel = (function() {
 
   /*
-   * [Marvel description]
-   * @param {String} publicKey
-   * @param {String} privateKey
+  Marvel client
+  @param {String} publicKey
+  @param {String} privateKey
    */
   function Marvel(publicKey, privateKey, _request) {
     this.publicKey = publicKey;
@@ -105,10 +105,11 @@ marvel.Marvel = (function() {
         options = {};
 
         /*
-         * F
-         * @param {String}   id
-         * @param {Function} callback
-         * @return {F|request.Request}
+        concrete client
+        @type {Function}
+        @param {String}   id
+        @param {Function} callback
+        @return {F|request.Request}
          */
         F = function(id, callback) {
           _this.timestamp = Date.now();
@@ -162,19 +163,19 @@ marvel.Marvel = (function() {
 
 
   /*
-   * Create a link entity function
-   * @param  {Function} parent entity
-   * @param {String} link link name
-   * @return {Function}
+  Create a link entity function
+  @param  {Function} parent entity
+  @param {String} link link name
+  @return {Function}
    */
 
   Marvel.prototype.makeLink = function(F, link) {
 
     /*
-     * entity link function
-     * @param  {Object}   options
-     * @param  {Function} callback
-     * @return {marvel.request}
+    entity link function
+    @param  {Object}   options
+    @param  {Function} callback
+    @return {marvel.request}
      */
     return function(options, callback) {
 
@@ -203,6 +204,8 @@ marvel.Marvel = (function() {
       return F.request.execute(url.format(urlOptions), callback);
     };
   };
+
+  util._extend(Marvel.prototype, events.EventEmitter.prototype);
 
   return Marvel;
 

@@ -1,14 +1,13 @@
 "use strict"
 ###
-# @author mparaiso <mparaiso@online.fr>
-# @license LGPL
+@author mparaiso <mparaiso@online.fr>
+@license LGPL
 ###
 request = require('./request')
-async = require('async')
 url = require('url')
 
 ### 
-# @namespace 
+@namespace 
 ###
 cache = exports
 ### default duration is 3 days ###
@@ -17,10 +16,10 @@ cache.defaultDuration = 1000 * 60 * 60 * 24 * 3
 class cache.Mongoose extends request.Request
 
     ###
-    # Mongoose request cache strategy
-    # @param {Mongoose} mongoose a mongoose instance
-    # @param {String} collectionName name of the collection
-    # @param {String} duration duration in ms,default is 3 days
+    Mongoose request cache strategy
+    @param {Mongoose} mongoose a mongoose instance
+    @param {String} collectionName name of the collection
+    @param {String} duration duration in ms,default is 3 days
     ###
     constructor:(@mongoose,@collectionName="Entry",@duration=cache.defaultDuration)->
         if not (this instanceof cache.Mongoose)
@@ -43,9 +42,9 @@ class cache.Mongoose extends request.Request
                 @Entry = @mongoose.model(@collectionName)
 
     ###
-    # execute cached request
-    # @param  {String} @uri   
-    # @param  {Function} @callback 
+    execute cached request
+    @param  {String} @uri   
+    @param  {Function} @callback 
     ###
     execute:(@uri,@callback)->
         @parsedUri = url.parse(@uri)
@@ -54,7 +53,9 @@ class cache.Mongoose extends request.Request
         delete @parsedUri.apikey
         @Entry.findOne({uri:@parsedUri,expires_at:{"$gte":Date.now()}}, @onMongooseQuery.bind(this))
 
-    ### event listener for mongoose query ###
+    ### 
+    event listener for mongoose query 
+    ###
     onMongooseQuery:(err, res)->
         if err
             @callback(err)
@@ -63,7 +64,9 @@ class cache.Mongoose extends request.Request
         else 
             @callback(undefined, res)
 
-    ### event listener for api query ###
+    ### 
+    event listener for api query 
+    ###
     onApiRequest:(err, res, body)->
         if err
             @callback(err)
@@ -71,6 +74,8 @@ class cache.Mongoose extends request.Request
             entry = new @Entry({uri: @parsedUri,data: body})
             entry.save(@onEntrySave.bind(this))
 
-    ### event listener one mongoose save ###
+    ### 
+    event listener one mongoose save 
+    ###
     onEntrySave:(err, res)=>
         @callback(err, res.data or undefined)

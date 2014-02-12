@@ -11,18 +11,18 @@ request = require('./request')
 crypto = require('crypto')
 
 ###*
- * marvel api
- * @namespace
- * @param  {String} publicKey
- * @param  {String} privateKey
- * @return {marvel.Marvel}
+marvel api
+@namespace
+@param  {String} publicKey
+@param  {String} privateKey
+@return {marvel.Marvel}
 ###
 marvel = (publicKey, privateKey)-> new marvel.Marvel(publicKey, privateKey)
 
 ###*
- * hash a string
- * @param  {String} string the string to hash
- * @return {String}      
+hash a string
+@param  {String} string the string to hash
+@return {String}      
 ###
 marvel.md5 = (string)->crypto.createHash('md5').update(string).digest('hex')
 
@@ -30,9 +30,9 @@ marvel.host = "gateway.marvel.com"
 marvel.protocol = "http"
 marvel.rootPath = 'v1/public'
 ###
- * A hash of entities
- * @type {Array}
-####
+A hash of entities
+@type {Array}
+###
 marvel.entities = [
     {
         name: "characters",
@@ -66,11 +66,11 @@ marvel.entities = [
     }
 ]
 
-class marvel.Marvel 
+class marvel.Marvel
     ###
-     * [Marvel description]
-     * @param {String} publicKey
-     * @param {String} privateKey
+    Marvel client
+    @param {String} publicKey
+    @param {String} privateKey
     ### 
     constructor: (@publicKey, @privateKey,@_request)->
         @_request ?= new request.Request()
@@ -78,10 +78,11 @@ class marvel.Marvel
         marvel.entities.forEach (entity)=>
             options = {}
             ###
-             * F
-             * @param {String}   id
-             * @param {Function} callback
-             * @return {F|request.Request}
+            concrete client
+            @type {Function}
+            @param {String}   id
+            @param {Function} callback
+            @return {F|request.Request}
             ###
             F = (id, callback)=>
                 @timestamp = Date.now()
@@ -118,17 +119,17 @@ class marvel.Marvel
 
 
     ###
-     * Create a link entity function
-     * @param  {Function} parent entity
-     * @param {String} link link name
-     * @return {Function}
+    Create a link entity function
+    @param  {Function} parent entity
+    @param {String} link link name
+    @return {Function}
     ###
     makeLink:(F, link)->
         ###
-         * entity link function
-         * @param  {Object}   options
-         * @param  {Function} callback
-         * @return {marvel.request}
+        entity link function
+        @param  {Object}   options
+        @param  {Function} callback
+        @return {marvel.request}
         ###
         return (options, callback)->
             ###if callback first argument then callback is options###
@@ -153,5 +154,7 @@ class marvel.Marvel
                     urlOptions.query[key] = options[key]
 
             return F.request.execute(url.format(urlOptions), callback)
+
+    util._extend(@::,events.EventEmitter::)    
 
 module.exports = marvel

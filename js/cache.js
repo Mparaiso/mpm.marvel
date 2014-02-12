@@ -2,23 +2,21 @@
 "use strict";
 
 /*
- * @author mparaiso <mparaiso@online.fr>
- * @license LGPL
+@author mparaiso <mparaiso@online.fr>
+@license LGPL
  */
-var async, cache, request, url,
+var cache, request, url,
   __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 request = require('./request');
 
-async = require('async');
-
 url = require('url');
 
 
 /* 
- * @namespace
+@namespace
  */
 
 cache = exports;
@@ -33,10 +31,10 @@ cache.Mongoose = (function(_super) {
 
 
   /*
-   * Mongoose request cache strategy
-   * @param {Mongoose} mongoose a mongoose instance
-   * @param {String} collectionName name of the collection
-   * @param {String} duration duration in ms,default is 3 days
+  Mongoose request cache strategy
+  @param {Mongoose} mongoose a mongoose instance
+  @param {String} collectionName name of the collection
+  @param {String} duration duration in ms,default is 3 days
    */
 
   function Mongoose(mongoose, collectionName, duration) {
@@ -73,9 +71,9 @@ cache.Mongoose = (function(_super) {
 
 
   /*
-   * execute cached request
-   * @param  {String} @uri   
-   * @param  {Function} @callback
+  execute cached request
+  @param  {String} @uri   
+  @param  {Function} @callback
    */
 
   Mongoose.prototype.execute = function(uri, callback) {
@@ -94,7 +92,9 @@ cache.Mongoose = (function(_super) {
   };
 
 
-  /* event listener for mongoose query */
+  /* 
+  event listener for mongoose query
+   */
 
   Mongoose.prototype.onMongooseQuery = function(err, res) {
     if (err) {
@@ -107,7 +107,9 @@ cache.Mongoose = (function(_super) {
   };
 
 
-  /* event listener for api query */
+  /* 
+  event listener for api query
+   */
 
   Mongoose.prototype.onApiRequest = function(err, res, body) {
     var entry;
@@ -123,7 +125,9 @@ cache.Mongoose = (function(_super) {
   };
 
 
-  /* event listener one mongoose save */
+  /* 
+  event listener one mongoose save
+   */
 
   Mongoose.prototype.onEntrySave = function(err, res) {
     return this.callback(err, res.data || void 0);
