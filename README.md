@@ -1,6 +1,8 @@
 mpm.marvel
 ==========
 
+[![Build Status](https://travis-ci.org/Mparaiso/mpm.marvel.svg?branch=master)](https://travis-ci.org/Mparaiso/mpm.marvel)
+
 [![NPM](https://nodei.co/npm/mpm.marvel.png)](https://nodei.co/npm/mpm.marvel/)
 
 **Marvel API client for NodeJS !**
